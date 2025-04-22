@@ -1,4 +1,4 @@
- package com.example.demo.member;
+package com.example.demo.member;
 
 public interface MemberRepository {
     void save(Member member); // 회원 저장

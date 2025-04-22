@@ -1,20 +1,27 @@
 package com.example.demo.order;
 
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.example.demo.discount.order.Order;
-import com.example.demo.discount.order.OrderService;
-import com.example.demo.discount.order.OrderServiceImpl;
+import com.example.demo.AppConfig;
 import com.example.demo.member.Grade;
 import com.example.demo.member.Member;
 import com.example.demo.member.MemberService;
-import com.example.demo.member.MemberServiceImpl;
 
 public class OrderServiceTest {
 
-    MemberService memberService = new MemberServiceImpl(); // 회원 서비스 생성
-    OrderService orderService = new OrderServiceImpl(); // 주문 서비스 생성
+    MemberService memberService;
+    OrderService orderService;
+
+    @BeforeEach
+    public void BeforeEach() {
+        AppConfig appConfig = new AppConfig(); // AppConfig 객체 생성
+        memberService = appConfig.memberService(); // 회원 서비스 생성
+        orderService = appConfig.orderService(); // 주문 서비스 생성
+    }
+
+    AppConfig appConfig = new AppConfig(); // AppConfig 객체 생성
 
     @Test
     void createOrder() {

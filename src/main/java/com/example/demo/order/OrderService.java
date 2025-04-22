@@ -1,4 +1,4 @@
-package com.example.demo.discount.order;
+package com.example.demo.order;
 
 public interface OrderService {
 

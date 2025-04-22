@@ -1,17 +1,18 @@
 package com.example.demo;
 
-import com.example.demo.discount.order.Order;
-import com.example.demo.discount.order.OrderService;
-import com.example.demo.discount.order.OrderServiceImpl;
 import com.example.demo.member.Grade;
 import com.example.demo.member.Member;
 import com.example.demo.member.MemberService;
-import com.example.demo.member.MemberServiceImpl;
+import com.example.demo.order.Order;
+import com.example.demo.order.OrderService;
 
 public class OrderApp {
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl(); // 회원 서비스 생성
-        OrderService orderService = new OrderServiceImpl(); // 주문 서비스 생성
+
+        AppConfig appConfig = new AppConfig(); // AppConfig 객체 생성
+
+        MemberService memberService = appConfig.memberService(); // 회원 서비스 생성
+        OrderService orderService = appConfig.orderService(); // 주문 서비스 생성
 
         Long memberId = 1L; // 회원 ID
         Member member = new Member(memberId, "memberA", Grade.VIP); // 회원 생성

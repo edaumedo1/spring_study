@@ -1,4 +1,4 @@
-package beanfind;
+package com.example.demo.beanfind;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 

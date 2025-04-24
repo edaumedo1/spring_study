@@ -1,12 +1,17 @@
-package com.example.demo;
+package com.example.demo.beandefinition;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.config.BeanDefinition;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+// import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+import com.example.demo.AppConfig;
 
 public class BeanDefinitionTest {
-    AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class); // ApplicationContext
+    // AnnotationConfigApplicationContext ac = new
+    // AnnotationConfigApplicationContext(AppConfig.class); // ApplicationContext
+    GenericXmlApplicationContext ac = new GenericXmlApplicationContext(AppConfig.class); // ApplicationContext
 
     @Test
     @DisplayName("빈 설정 메타정보 확인")
